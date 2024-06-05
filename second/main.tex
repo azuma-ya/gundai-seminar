@@ -1,0 +1,177 @@
+%%%%%%齋藤研究室レジュメテンプレート%%%%%%% 2024
+
+\documentclass[a4j]{jsarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amscd,amsthm}
+\usepackage{ascmac,fancybox} 
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{algorithm}%擬似コードを書く場合
+\usepackage{algorithmic}%擬似コードを書く場合
+%%%% ↓algotithmic の \REQUIRE と \ENSURE の表記を変更する
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+%%%% ↑algotithmic の \REQUIRE と \ENSURE の表記を変更する
+\def \QED{\hfill $\Box$}%証明終了の記号
+
+
+%%%%%%%本文%%%%%%% 
+\title{第9回\\学部3年前期ゼミナール発表資料}
+\author{青山和樹}
+\date{2024年6月10日}
+
+\begin{document}
+
+\maketitle
+
+%%目的%%
+\section*{発表の目的}
+テキスト\cite{text}の
+\begin{itemize}
+	\item 42～50ページの
+	      \begin{itemize}
+		      \item[A）] 元の無限列、有限列
+		      \item[B）] 元の族
+		      \item[C）] 集合族とその和集合、共通部分
+		      \item[D）] 一般の直積、選出公理
+		      \item[E）] 写像に関する一定理
+		      \item[F）] 多変数の写像
+	      \end{itemize}
+	\item 50ページの問2
+\end{itemize}
+について発表する．
+
+%%目次%%
+\tableofcontents
+
+\clearpage
+
+%%本文%%
+\section{元の無限列、有限列}
+
+\subsection{無限列}
+
+われわれは高等数学で数列の概念を学んだ。例えば、
+
+\begin{align}
+	\label{sample}
+	 & 1,\:\frac{1}{2},\:\frac{1}{3},\:\frac{1}{4},\:\cdots,\:\frac{1}{n},\:\cdots \\
+	 & 1,\:-1,\:1,\:-1,\:\cdots,\:(-1)^{n-1},\:\cdots
+\end{align}
+
+そして今、(\ref{sample})式の一般項は$a(n)=\frac{1}{n}$として表されるが、これは$\mathbb{N}$から$\mathbb{R}$への写像として考えらる。\\
+さらに2つの数列が等しいというのは$n$項がそれぞれ一致するということであった。これは$a(n) : \mathbb{N} \rightarrow \mathbb{R}$から定まる数列と$a^{\prime}(n) : \mathbb{N} \rightarrow \mathbb{R}$から定まる数列とは$a=a^{\prime}$のときかつその時に限って等しい、ということにほかなない。そのため数列は$\mathbb{N} \rightarrow \mathbb{R}$への写像そのものとして考えても全く問題ない。\\
+
+\begin{itembox}[l]{\textgt{定義 1.1} (無限列)}
+	一般に$\mathbb{N}$から一つの集合$A$への写像$a$のことを、$A$の元の列(詳しくは\textgt{無限列})とも言うこととする。このとき、$\mathbb{N}$の元$n$の$a$による像$a(n)$を通常$a_n$と書き、$a$を$$ a_1,\:a_2,\:\cdots,\:a_n,\:\cdots $$あるいは$(a_n \mid n \in \mathbb{N})$、$(a_n)_{n \in \mathbb{N}}$ (または簡単に$(a_n)$)などの記号で表す。
+\end{itembox}\\
+
+$A$の元の列は先述の通り$\mathbb{N}$から$A$への写像であるが、その写像による$\mathbb{N}$の元$n$の像$a_n$を全て集めてできる集合$\{a_n \mid n \in \mathbb{N}\}$は$A$の部分集合である。これは、写像$a$の値域にほかならない。これをまた、$\{a_n\}_{n \in \mathbb{N}}$ (または簡単に$\{a_n\}$)とも書く。\\
+
+\textgt{注意 1.2} $(a_n)_{n \in \mathbb{N}}$と$\{a_n\}_{n \in \mathbb{N}}$は記号が似ているが、写像と、集合という概念的明確な違いがあるので混同しないように注意する。というのも、通常、微積分学の書物では、数列自身を記号$\{a_n\}$と表すことが多く、数列自身は写像であるのに、集合として表現してしまっているからである。
+
+\subsection{有限列}
+
+\begin{itembox}[l]{\textgt{定義 1.3} (有限列)}
+	無限列に対して、$n$を一つの与えられた自然数とすると、集合$\{1,2,\cdots,n\}$から集合$A$への写像$a$を$A$の元の\textgt{有限列}(詳しくは、長さ$n$の有限列)とい、これを$$ a_1,\:a_2,\:\cdots,\:a_n$$あるいは$(a_i \mid i \in \{1,2,\cdots,n\})$、$(a_i \mid i = 1,2,\cdots,n)$、$(a_i)_{i \in \{1,2,\cdots,n\}}$などと書く。
+\end{itembox}\\
+
+もちろん$a_i$は写像$a$による$i$の像$a(i)$を意味する。\\
+
+\textgt{解説 1.4} 集合$A$から(繰り返しを許して)元を$n$個選んで作ったいわゆる重複順列の概念は、写像と全く同じものである。つまりn-重複順列を写像として表現するためには、集合
+$\{1,2,\cdots,n\}$から集合$A$への写像を考えればよい。例えば、集合が$A=\{a,b,c\}$であり$n=3$であるとすると、写像$f$が
+\begin{align*}
+	f : \{1,2,3\} & \rightarrow A \\
+	1             & \mapsto a     \\
+	2             & \mapsto a     \\
+	3             & \mapsto b
+\end{align*}
+と定義されているとする。すると重複順列は$aab$として得られ、まさに写像であることがわかると思う。
+
+\section{元の族}
+
+「元の列」をさらに一般化した概念に、「元の族」がある。\\
+
+\begin{itembox}[l]{\textgt{定義 2.1} (元の族・添数集合)}
+	一般に、ある集合$\Lambda$から集合$A$への写像$a$を、しばしば$A$の元の族、詳しくは$\Lambda$によって添数づけられた$A$の元の族という。その場合、$\Lambda$の各元$\lambda$の$a$による像$a(\lambda)$を$a_\lambda$と書き、$a$を$$ (a_\lambda \mid \lambda \in \Lambda) または (a_\lambda)_{\lambda \in \Lambda} $$などで表す。$a$の定義域$\Lambda$をこの族の\textgt{添数集合}という。
+\end{itembox}\\
+
+\textgt{注意 2.1} $\mathbb{N}$あるいは$\{1,2,\cdots,n\}$のような集合は、その元の間に順序があり、いわゆる整列集合をなしている。(この概念はテキスト\cite{text}第3章にある) 添数集合がこのような整列集合である場合に「元の族」はとくに「元の列」と呼ばれるのである。
+
+\section{集合族とその和集合、共通部分}
+
+\subsection{集合族}
+
+\begin{itembox}[l]{\textgt{定義 3.1} (集合族・部分集合族)}
+	$\Lambda$によって添数づけられた族$(A_\lambda)_{\lambda \in \Lambda}$で、$A_\lambda$がそれぞれ1つの集合であるものを($\Lambda$によって添数づけられた)集合族という。集合族$(A_\lambda)_{\lambda \in \Lambda}$に対し、一つの集合$X$があって、どの$\lambda \in \Lambda$についても$A_\lambda \subset X$となっている場合には$(A_\lambda)_{\lambda \in \Lambda}$を$X$の部分集合族という。
+\end{itembox}
+
+\subsection{和集合、共通部分}
+
+\begin{itembox}[l]{\textgt{定義 3.2} (和集合・共通部分)}
+	集合族$(A_\lambda)_{\lambda \in \Lambda}$が与えられたとき、$x \in A_\lambda$となる$\Lambda$の元$\lambda$が存在するような$x$全体の集合を、この族の\textgt{和集合}という。また、$\Lambda$のどの元$\lambda$に対しても$A_\lambda \subset X$であるような$x$全体の集合を、この族の\textgt{共通部分}という。それぞれ
+	\begin{align}
+		\bigcup_{\lambda \in \Lambda}A_\lambda & = \{ x \mid \exists\lambda \in \Lambda\:(x \in A_\lambda) \} \\
+		\bigcap_{\lambda \in \Lambda}A_\lambda & = \{ x \mid \forall\lambda \in \Lambda\:(x \in A_\lambda) \}
+	\end{align}
+	となる。
+\end{itembox}\\
+
+これはそれぞれテキスト\cite{text}の集合系の和集合、共通部分[第2章参照]と一致する。\\
+
+% \textgt{注意 3.3} $\Lambda = {1,2,\cdots,n}$のとき、
+
+\textgt{解説 3.3}　$\bigcup_{\lambda \in \Lambda}A_\lambda$はすべての$\lambda$に対する$A_\lambda$を含むような集合のうちで最小のもの、$\bigcap_{\lambda \in \Lambda}A_\lambda$はすべての$\lambda$に対する$A_\lambda$に含まれるような集合のうちで最大のものである。\\
+
+集合族の和集合、共通部分について、次のような公式が成り立つ。\\
+
+\begin{itembox}[l]{\textgt{公式 3.4} (分配律の一般化)}
+	\begin{align}
+		\left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B & = \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B) \\
+		\left( \bigcap_{\lambda \in \Lambda}A_\lambda \right) \cup B & = \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)
+	\end{align}
+\end{itembox}\\
+
+\begin{itembox}[l]{\textgt{公式 3.5} (de Morganの法則の一般化)}
+	$(A_\lambda)_{\lambda \in \Lambda}$が普遍集合$X$の部分集合族であるとき
+	\begin{align}
+		\left( \bigcup_{\lambda \in \Lambda}A_\lambda \right)^c & = \bigcap_{\lambda \in \Lambda}A_\lambda^c \\
+		\left( \bigcap_{\lambda \in \Lambda}A_\lambda \right)^c & = \bigcup_{\lambda \in \Lambda}A_\lambda^c
+	\end{align}
+\end{itembox}\\
+
+\begin{itembox}[l]{\textgt{公式 3.6} (写像の像および原像についての法則の一般化)}
+	$f$を集合$A$から集合$B$への写像とし、$(P_\lambda)_{\lambda \in \Lambda}$、$(Q_\mu)_{\mu \in M}$をそれぞれ$A$、$B$の部分集合族とすると
+	\begin{align}
+		f \left( \bigcup_{\lambda \in \Lambda}P_\lambda \right) & = \bigcup_{\lambda \in \Lambda}f(P_\lambda)            \\
+		f \left( \bigcap_{\lambda \in \Lambda}P_\lambda \right) & \subset \bigcap_{\lambda \in \Lambda}f^{-1}(P_\lambda) \\
+		f^{-1} \left( \bigcup_{\mu \in M}Q_\mu \right)          & = \bigcup_{\mu \in M}f^{-1}(Q_\mu)                     \\
+		f^{-1} \left( \bigcap_{\mu \in M}Q_\mu \right)          & = \bigcap_{\mu \in M}f^{-1}(Q_\mu)
+	\end{align}
+\end{itembox}
+
+\section{一般の直積、選出公理}
+
+\begin{itembox}[l]{\textgt{定義 4.1} (直積)}
+	$(A_\lambda)_{\lambda \in \Lambda}$を一つの与えられた集合族とし、$\Lambda$で定義された写像$a$で、次の条件$$ \Lambda\mbox{のどの元}\lambda\mbox{に対しても}a(\lambda)=a_\lambda \in A_\lambda $$を満たす族$(a_\lambda)_{\lambda \in \Lambda}$全体の集合を、集合族$(A_\lambda)_{\lambda \in \Lambda}$の直積といい、記号$$\prod_{\lambda \in \Lambda}A_\lambda$$で表す。直積$\prod_{\lambda \in \Lambda}A_\lambda$に対して、各$A_\lambda$を祖の直積因子という。
+\end{itembox}\\
+
+
+
+\section{写像に関する一定理}
+
+\section{多変数の写像}
+
+\begin{itembox}[l]{\textgt{解説 1.2} (集合の相等)}
+	集合$A, B$は，全く同じ元から成るとき，すなわち$A$の任意の元は同時にまた$B$の元でもあり，$B$の任意の元は同時にまた$A$の元でもあるとき，等しいという．そのとき$A=B$と書く．
+\end{itembox}
+
+
+%%参考文献%%
+%\newpage
+\begin{thebibliography}{99}
+	\bibitem{text}松坂和夫，集合位相入門，岩波書店，1968．
+\end{thebibliography}
+
+\end{document}
