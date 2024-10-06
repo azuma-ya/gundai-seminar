@@ -30,16 +30,16 @@
 \section*{発表の目的}
 テキスト\cite{text}の
 \begin{itemize}
-	\item 42～50ページの
-	      \begin{itemize}
-		      \item[A）] 元の無限列、有限列
-		      \item[B）] 元の族
-		      \item[C）] 集合族とその和集合、共通部分
-		      \item[D）] 一般の直積、選出公理
-		      \item[E）] 写像に関する一定理
-		      \item[F）] 多変数の写像
-	      \end{itemize}
-	\item 50ページの問2
+  \item 42～50ページの
+        \begin{itemize}
+          \item[A）] 元の無限列, 有限列
+          \item[B）] 元の族
+          \item[C）] 集合族とその和集合, 共通部分
+          \item[D）] 一般の直積, 選出公理
+          \item[E）] 写像に関する一定理
+          \item[F）] 多変数の写像
+        \end{itemize}
+  \item 50ページの問2
 \end{itemize}
 について発表する．
 
@@ -49,235 +49,235 @@
 \clearpage
 
 %%本文%%
-\section{元の無限列、有限列}
+\section{元の無限列, 有限列}
 
 \subsection{無限列}
 
-われわれは高等数学で数列の概念を学んだ。例えば、
+われわれは高等数学で数列の概念を学んだ. 例えば,
 
 \begin{align}
-	\label{sample}
-	 & 1,\:\frac{1}{2},\:\frac{1}{3},\:\frac{1}{4},\:\cdots,\:\frac{1}{n},\:\cdots \\
-	 & 1,\:-1,\:1,\:-1,\:\cdots,\:(-1)^{n-1},\:\cdots
+  \label{sample}
+   & 1,\:\frac{1}{2},\:\frac{1}{3},\:\frac{1}{4},\:\cdots,\:\frac{1}{n},\:\cdots \\
+   & 1,\:-1,\:1,\:-1,\:\cdots,\:(-1)^{n-1},\:\cdots
 \end{align}
 
-そして今、(\ref{sample})式の一般項は$a(n)=\frac{1}{n}$として表されるが、これは$\mathbb{N}$から$\mathbb{R}$への写像として考えらる。\\
-さらに2つの数列が等しいというのは$n$項がそれぞれ一致するということであった。これは$a(n) : \mathbb{N} \rightarrow \mathbb{R}$から定まる数列と$a^{\prime}(n) : \mathbb{N} \rightarrow \mathbb{R}$から定まる数列とは$a=a^{\prime}$のときかつその時に限って等しい、ということにほかなない。そのため数列は$\mathbb{N} \rightarrow \mathbb{R}$への写像そのものとして考えても全く問題ない。\\
+そして今, (\ref{sample})式の一般項は$a(n)=\frac{1}{n}$として表されるが, これは$\mathbb{N}$から$\mathbb{R}$への写像として考えらる. \\
+さらに2つの数列が等しいというのは$n$項がそれぞれ一致するということであった. これは$a(n) : \mathbb{N} \rightarrow \mathbb{R}$から定まる数列と$a^{\prime}(n) : \mathbb{N} \rightarrow \mathbb{R}$から定まる数列とは$a=a^{\prime}$のときかつその時に限って等しい, ということにほかなない. そのため数列は$\mathbb{N} \rightarrow \mathbb{R}$への写像そのものとして考えても全く問題ない. \\
 
 \begin{itembox}[l]{\textgt{定義 1.1} (無限列)}
-	一般に$\mathbb{N}$から一つの集合$A$への写像$a$のことを、$A$の元の列(詳しくは\textgt{無限列})とも言うこととする。このとき、$\mathbb{N}$の元$n$の$a$による像$a(n)$を通常$a_n$と書き、$a$を$$ a_1,\:a_2,\:\cdots,\:a_n,\:\cdots $$あるいは$(a_n \mid n \in \mathbb{N})$、$(a_n)_{n \in \mathbb{N}}$ (または簡単に$(a_n)$)などの記号で表す。
+  一般に$\mathbb{N}$から一つの集合$A$への写像$a$のことを, $A$の元の列(詳しくは\textgt{無限列})とも言うこととする. このとき, $\mathbb{N}$の元$n$の$a$による像$a(n)$を通常$a_n$と書き, $a$を$$ a_1,\:a_2,\:\cdots,\:a_n,\:\cdots $$あるいは$(a_n \mid n \in \mathbb{N})$, $(a_n)_{n \in \mathbb{N}}$ (または簡単に$(a_n)$)などの記号で表す.
 \end{itembox}\\
 
-$A$の元の列は先述の通り$\mathbb{N}$から$A$への写像であるが、その写像による$\mathbb{N}$の元$n$の像$a_n$を全て集めてできる集合$\{a_n \mid n \in \mathbb{N}\}$は$A$の部分集合である。これは、写像$a$の値域にほかならない。これをまた、$\{a_n\}_{n \in \mathbb{N}}$ (または簡単に$\{a_n\}$)とも書く。\\
+$A$の元の列は先述の通り$\mathbb{N}$から$A$への写像であるが, その写像による$\mathbb{N}$の元$n$の像$a_n$を全て集めてできる集合$\{a_n \mid n \in \mathbb{N}\}$は$A$の部分集合である. これは, 写像$a$の値域にほかならない. これをまた, $\{a_n\}_{n \in \mathbb{N}}$ (または簡単に$\{a_n\}$)とも書く. \\
 
-\textgt{注意 1.2} $(a_n)_{n \in \mathbb{N}}$と$\{a_n\}_{n \in \mathbb{N}}$は記号が似ているが、写像と、集合という概念的明確な違いがあるので混同しないように注意する。というのも、通常、微積分学の書物では、数列自身を記号$\{a_n\}$と表すことが多く、数列自身は写像であるのに、集合として表現してしまっているからである。
+\textgt{注意 1.2} $(a_n)_{n \in \mathbb{N}}$と$\{a_n\}_{n \in \mathbb{N}}$は記号が似ているが, 写像と, 集合という概念的明確な違いがあるので混同しないように注意する. というのも, 通常, 微積分学の書物では, 数列自身を記号$\{a_n\}$と表すことが多く, 数列自身は写像であるのに, 集合として表現してしまっているからである.
 
 \subsection{有限列}
 
 \begin{itembox}[l]{\textgt{定義 1.3} (有限列)}
-	無限列に対して、$n$を一つの与えられた自然数とすると、集合$\{1,2,\cdots,n\}$から集合$A$への写像$a$を$A$の元の\textgt{有限列}(詳しくは、長さ$n$の有限列)とい、これを$$ a_1,\:a_2,\:\cdots,\:a_n$$あるいは$(a_i \mid i \in \{1,2,\cdots,n\})$、$(a_i \mid i = 1,2,\cdots,n)$、$(a_i)_{i \in \{1,2,\cdots,n\}}$などと書く。
+  無限列に対して, $n$を一つの与えられた自然数とすると, 集合$\{1,2,\cdots,n\}$から集合$A$への写像$a$を$A$の元の\textgt{有限列}(詳しくは, 長さ$n$の有限列)とい, これを$$ a_1,\:a_2,\:\cdots,\:a_n$$あるいは$(a_i \mid i \in \{1,2,\cdots,n\})$, $(a_i \mid i = 1,2,\cdots,n)$, $(a_i)_{i \in \{1,2,\cdots,n\}}$などと書く.
 \end{itembox}\\
 
-もちろん$a_i$は写像$a$による$i$の像$a(i)$を意味する。\\
+もちろん$a_i$は写像$a$による$i$の像$a(i)$を意味する. \\
 
-\textgt{解説 1.4} 集合$A$から(繰り返しを許して)元を$n$個選んで作ったいわゆる重複順列の概念は、写像と全く同じものである。つまりn-重複順列を写像として表現するためには、集合
-$\{1,2,\cdots,n\}$から集合$A$への写像を考えればよい。例えば、集合が$A=\{a,b,c\}$であり$n=3$であるとする。そして、ある写像$f$が
+\textgt{解説 1.4} 集合$A$から(繰り返しを許して)元を$n$個選んで作ったいわゆる重複順列の概念は, 写像と全く同じものである. つまりn-重複順列を写像として表現するためには, 集合
+$\{1,2,\cdots,n\}$から集合$A$への写像を考えればよい. 例えば, 集合が$A=\{a,b,c\}$であり$n=3$であるとする. そして, ある写像$f$が
 \begin{align*}
-	f : \{1,2,3\} & \rightarrow A \\
-	1             & \mapsto a     \\
-	2             & \mapsto a     \\
-	3             & \mapsto b
+  f : \{1,2,3\} & \rightarrow A \\
+  1             & \mapsto a     \\
+  2             & \mapsto a     \\
+  3             & \mapsto b
 \end{align*}
-と定義されているとする。すると重複順列は$aab$として得られ、まさに写像であることがわかると思う。
+と定義されているとする. すると重複順列は$aab$として得られ, まさに写像であることがわかると思う.
 
 \section{元の族}
 
-「元の列」をさらに一般化した概念に、「元の族」がある。\\
+「元の列」をさらに一般化した概念に, 「元の族」がある. \\
 
 \begin{itembox}[l]{\textgt{定義 2.1} (元の族・添数集合)}
-	一般に、ある集合$\Lambda$から集合$A$への写像$a$を、しばしば$A$の元の族、詳しくは$\Lambda$によって添数づけられた$A$の元の族という。その場合、$\Lambda$の各元$\lambda$の$a$による像$a(\lambda)$を$a_\lambda$と書き、$a$を$$ (a_\lambda \mid \lambda \in \Lambda) または (a_\lambda)_{\lambda \in \Lambda} $$などで表す。$a$の定義域$\Lambda$をこの族の\textgt{添数集合}という。
+  一般に, ある集合$\Lambda$から集合$A$への写像$a$を, しばしば$A$の元の族, 詳しくは$\Lambda$によって添数づけられた$A$の元の族という. その場合, $\Lambda$の各元$\lambda$の$a$による像$a(\lambda)$を$a_\lambda$と書き, $a$を$$ (a_\lambda \mid \lambda \in \Lambda) または (a_\lambda)_{\lambda \in \Lambda} $$などで表す. $a$の定義域$\Lambda$をこの族の\textgt{添数集合}という.
 \end{itembox}\\
 
-\textgt{注意 2.1} $\mathbb{N}$あるいは$\{1,2,\cdots,n\}$のような集合は、その元の間に順序があり、いわゆる整列集合をなしている。(この概念はテキスト\cite{text}第3章にある) 添数集合がこのような整列集合である場合に「元の族」はとくに「元の列」と呼ばれるのである。
+\textgt{注意 2.1} $\mathbb{N}$あるいは$\{1,2,\cdots,n\}$のような集合は, その元の間に順序があり, いわゆる整列集合をなしている. (この概念はテキスト\cite{text}第3章にある) 添数集合がこのような整列集合である場合に「元の族」はとくに「元の列」と呼ばれるのである.
 
-\section{集合族とその和集合、共通部分}
+\section{集合族とその和集合, 共通部分}
 
 \subsection{集合族}
 
 \begin{itembox}[l]{\textgt{定義 3.1} (集合族・部分集合族)}
-	$\Lambda$によって添数づけられた族$(A_\lambda)_{\lambda \in \Lambda}$で、$A_\lambda$がそれぞれ1つの集合であるものを($\Lambda$によって添数づけられた)集合族という。集合族$(A_\lambda)_{\lambda \in \Lambda}$に対し、一つの集合$X$があって、どの$\lambda \in \Lambda$についても$A_\lambda \subset X$となっている場合には$(A_\lambda)_{\lambda \in \Lambda}$を$X$の部分集合族という。
+  $\Lambda$によって添数づけられた族$(A_\lambda)_{\lambda \in \Lambda}$で, $A_\lambda$がそれぞれ1つの集合であるものを($\Lambda$によって添数づけられた)集合族という. 集合族$(A_\lambda)_{\lambda \in \Lambda}$に対し, 一つの集合$X$があって, どの$\lambda \in \Lambda$についても$A_\lambda \subset X$となっている場合には$(A_\lambda)_{\lambda \in \Lambda}$を$X$の部分集合族という.
 \end{itembox}
 
-\subsection{和集合、共通部分}
+\subsection{和集合, 共通部分}
 
 \begin{itembox}[l]{\textgt{定義 3.2} (和集合・共通部分)}
-	集合族$(A_\lambda)_{\lambda \in \Lambda}$が与えられたとき、$x \in A_\lambda$となる$\Lambda$の元$\lambda$が存在するような$x$全体の集合を、この族の\textgt{和集合}という。また、$\Lambda$のどの元$\lambda$に対しても$A_\lambda \subset X$であるような$x$全体の集合を、この族の\textgt{共通部分}という。それぞれ
-	\begin{align}
-		\bigcup_{\lambda \in \Lambda}A_\lambda & = \{ x \mid \exists\lambda \in \Lambda\:(x \in A_\lambda) \} \\
-		\bigcap_{\lambda \in \Lambda}A_\lambda & = \{ x \mid \forall\lambda \in \Lambda\:(x \in A_\lambda) \}
-	\end{align}
-	となる。
+  集合族$(A_\lambda)_{\lambda \in \Lambda}$が与えられたとき, $x \in A_\lambda$となる$\Lambda$の元$\lambda$が存在するような$x$全体の集合を, この族の\textgt{和集合}という. また, $\Lambda$のどの元$\lambda$に対しても$A_\lambda \subset X$であるような$x$全体の集合を, この族の\textgt{共通部分}という. それぞれ
+  \begin{align}
+    \bigcup_{\lambda \in \Lambda}A_\lambda & = \{ x \mid \exists\lambda \in \Lambda\:(x \in A_\lambda) \} \\
+    \bigcap_{\lambda \in \Lambda}A_\lambda & = \{ x \mid \forall\lambda \in \Lambda\:(x \in A_\lambda) \}
+  \end{align}
+  となる.
 \end{itembox}\\
 
-これはそれぞれテキスト\cite{text}の集合系の和集合、共通部分[第2章参照]と一致する。\\
+これはそれぞれテキスト\cite{text}の集合系の和集合, 共通部分[第2章参照]と一致する. \\
 
-% \textgt{注意 3.3} $\Lambda = {1,2,\cdots,n}$のとき、
+% \textgt{注意 3.3} $\Lambda = {1,2,\cdots,n}$のとき, 
 
-\textgt{解説 3.3}　$\bigcup_{\lambda \in \Lambda}A_\lambda$はすべての$\lambda$に対する$A_\lambda$を含むような集合のうちで最小のもの、$\bigcap_{\lambda \in \Lambda}A_\lambda$はすべての$\lambda$に対する$A_\lambda$に含まれるような集合のうちで最大のものである。\\
+\textgt{解説 3.3}　$\bigcup_{\lambda \in \Lambda}A_\lambda$はすべての$\lambda$に対する$A_\lambda$を含むような集合のうちで最小のもの, $\bigcap_{\lambda \in \Lambda}A_\lambda$はすべての$\lambda$に対する$A_\lambda$に含まれるような集合のうちで最大のものである. \\
 
-集合族の和集合、共通部分について、次のような公式が成り立つ。\\
+集合族の和集合, 共通部分について, 次のような公式が成り立つ. \\
 
 \begin{itembox}[l]{\textgt{公式 3.4} (分配律の一般化)}
-	\begin{align}
-		\left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B & = \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B) \\
-		\left( \bigcap_{\lambda \in \Lambda}A_\lambda \right) \cup B & = \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)
-	\end{align}
+  \begin{align}
+    \left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B & = \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B) \\
+    \left( \bigcap_{\lambda \in \Lambda}A_\lambda \right) \cup B & = \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)
+  \end{align}
 \end{itembox}\\
 
 \begin{itembox}[l]{\textgt{公式 3.5} (de Morganの法則の一般化)}
-	$(A_\lambda)_{\lambda \in \Lambda}$が普遍集合$X$の部分集合族であるとき
-	\begin{align}
-		\left( \bigcup_{\lambda \in \Lambda}A_\lambda \right)^c & = \bigcap_{\lambda \in \Lambda}A_\lambda^c \\
-		\left( \bigcap_{\lambda \in \Lambda}A_\lambda \right)^c & = \bigcup_{\lambda \in \Lambda}A_\lambda^c
-	\end{align}
+  $(A_\lambda)_{\lambda \in \Lambda}$が普遍集合$X$の部分集合族であるとき
+  \begin{align}
+    \left( \bigcup_{\lambda \in \Lambda}A_\lambda \right)^c & = \bigcap_{\lambda \in \Lambda}A_\lambda^c \\
+    \left( \bigcap_{\lambda \in \Lambda}A_\lambda \right)^c & = \bigcup_{\lambda \in \Lambda}A_\lambda^c
+  \end{align}
 \end{itembox}\\
 
 \begin{itembox}[l]{\textgt{公式 3.6} (写像の像および原像についての法則の一般化)}
-	$f$を集合$A$から集合$B$への写像とし、$(P_\lambda)_{\lambda \in \Lambda}$、$(Q_\mu)_{\mu \in M}$をそれぞれ$A$、$B$の部分集合族とすると
-	\begin{align}
-		f \left( \bigcup_{\lambda \in \Lambda}P_\lambda \right) & = \bigcup_{\lambda \in \Lambda}f(P_\lambda)            \\
-		f \left( \bigcap_{\lambda \in \Lambda}P_\lambda \right) & \subset \bigcap_{\lambda \in \Lambda}f^{-1}(P_\lambda) \\
-		f^{-1} \left( \bigcup_{\mu \in M}Q_\mu \right)          & = \bigcup_{\mu \in M}f^{-1}(Q_\mu)                     \\
-		f^{-1} \left( \bigcap_{\mu \in M}Q_\mu \right)          & = \bigcap_{\mu \in M}f^{-1}(Q_\mu)
-	\end{align}
+  $f$を集合$A$から集合$B$への写像とし, $(P_\lambda)_{\lambda \in \Lambda}$, $(Q_\mu)_{\mu \in M}$をそれぞれ$A$, $B$の部分集合族とすると
+  \begin{align}
+    f \left( \bigcup_{\lambda \in \Lambda}P_\lambda \right) & = \bigcup_{\lambda \in \Lambda}f(P_\lambda)            \\
+    f \left( \bigcap_{\lambda \in \Lambda}P_\lambda \right) & \subset \bigcap_{\lambda \in \Lambda}f^{-1}(P_\lambda) \\
+    f^{-1} \left( \bigcup_{\mu \in M}Q_\mu \right)          & = \bigcup_{\mu \in M}f^{-1}(Q_\mu)                     \\
+    f^{-1} \left( \bigcap_{\mu \in M}Q_\mu \right)          & = \bigcap_{\mu \in M}f^{-1}(Q_\mu)
+  \end{align}
 \end{itembox}
 
-\section{一般の直積、選出公理}
+\section{一般の直積, 選出公理}
 
 \subsection{一般の直積}
 
 \begin{itembox}[l]{\textgt{定義 4.1} (直積)}
-	$(A_\lambda)_{\lambda \in \Lambda}$を一つの与えられた集合族とし、$\Lambda$で定義された写像$a$で、次の条件$$ \Lambda\mbox{のどの元}\lambda\mbox{に対しても}a(\lambda)=a_\lambda \in A_\lambda $$を満たす族$(a_\lambda)_{\lambda \in \Lambda}$全体の集合を、集合族$(A_\lambda)_{\lambda \in \Lambda}$の直積といい、記号$$\prod_{\lambda \in \Lambda}A_\lambda$$で表す。直積$\prod_{\lambda \in \Lambda}A_\lambda$に対して、各$A_\lambda$をその直積因子という。
+  $(A_\lambda)_{\lambda \in \Lambda}$を一つの与えられた集合族とし, $\Lambda$で定義された写像$a$で, 次の条件$$ \Lambda\mbox{のどの元}\lambda\mbox{に対しても}a(\lambda)=a_\lambda \in A_\lambda $$を満たす族$(a_\lambda)_{\lambda \in \Lambda}$全体の集合を, 集合族$(A_\lambda)_{\lambda \in \Lambda}$の直積といい, 記号$$\prod_{\lambda \in \Lambda}A_\lambda$$で表す. 直積$\prod_{\lambda \in \Lambda}A_\lambda$に対して, 各$A_\lambda$をその直積因子という.
 \end{itembox}\\
 
-\textgt{解説 4.2} 直積集合は写像全体の集合であり、改めて集合として書くと以下のようになる。
+\textgt{解説 4.2} 直積集合は写像全体の集合であり, 改めて集合として書くと以下のようになる.
 \begin{align}
-	\prod_{\lambda \in \Lambda}A_\lambda = \left\{ a: \Lambda \rightarrow \bigcup_{\lambda \in \Lambda}A_\lambda \mid a(\lambda) \in A_\lambda \right\}
+  \prod_{\lambda \in \Lambda}A_\lambda = \left\{ a: \Lambda \rightarrow \bigcup_{\lambda \in \Lambda}A_\lambda \mid a(\lambda) \in A_\lambda \right\}
 \end{align}
 
-例えば$\Lambda=\{1,2\}$、$X_1=\{x_{1,1},x_{1,2},x_{1,3}\}$、$X_2=\{x_{2,1},x_{2,2}\}$があれば
+例えば$\Lambda=\{1,2\}$, $X_1=\{x_{1,1},x_{1,2},x_{1,3}\}$, $X_2=\{x_{2,1},x_{2,2}\}$があれば
 \begin{multicols}{3}
-	\begin{align*}
-		f_1 : \{1,2\} & \rightarrow X_1 \cup X_2 \\
-		1             & \mapsto x_{1,1} \in X_1  \\
-		2             & \mapsto x_{2,1}\in X_2   \\
-	\end{align*}\\
-	\begin{align*}
-		f_2 : \{1,2\} & \rightarrow X_1 \cup X_2 \\
-		1             & \mapsto x_{1,1} \in X_1  \\
-		2             & \mapsto x_{2,2}\in X_2   \\
-	\end{align*}\\
-	\begin{align*}
-		f_3 : \{1,2\} & \rightarrow X_1 \cup X_2 \\
-		1             & \mapsto x_{1,2} \in X_1  \\
-		2             & \mapsto x_{2,1}\in X_2   \\
-	\end{align*}\\
-	\begin{align*}
-		f_4 : \{1,2\} & \rightarrow X_1 \cup X_2 \\
-		1             & \mapsto x_{1,2} \in X_1  \\
-		2             & \mapsto x_{2,2}\in X_2   \\
-	\end{align*}\\
-	\begin{align*}
-		f_5 : \{1,2\} & \rightarrow X_1 \cup X_2 \\
-		1             & \mapsto x_{1,3} \in X_1  \\
-		2             & \mapsto x_{2,1}\in X_2   \\
-	\end{align*}\\
-	\begin{align*}
-		f_6 : \{1,2\} & \rightarrow X_1 \cup X_2 \\
-		1             & \mapsto x_{1,3} \in X_1  \\
-		2             & \mapsto x_{2,2}\in X_2   \\
-	\end{align*}\\
+  \begin{align*}
+    f_1 : \{1,2\} & \rightarrow X_1 \cup X_2 \\
+    1             & \mapsto x_{1,1} \in X_1  \\
+    2             & \mapsto x_{2,1}\in X_2   \\
+  \end{align*}\\
+  \begin{align*}
+    f_2 : \{1,2\} & \rightarrow X_1 \cup X_2 \\
+    1             & \mapsto x_{1,1} \in X_1  \\
+    2             & \mapsto x_{2,2}\in X_2   \\
+  \end{align*}\\
+  \begin{align*}
+    f_3 : \{1,2\} & \rightarrow X_1 \cup X_2 \\
+    1             & \mapsto x_{1,2} \in X_1  \\
+    2             & \mapsto x_{2,1}\in X_2   \\
+  \end{align*}\\
+  \begin{align*}
+    f_4 : \{1,2\} & \rightarrow X_1 \cup X_2 \\
+    1             & \mapsto x_{1,2} \in X_1  \\
+    2             & \mapsto x_{2,2}\in X_2   \\
+  \end{align*}\\
+  \begin{align*}
+    f_5 : \{1,2\} & \rightarrow X_1 \cup X_2 \\
+    1             & \mapsto x_{1,3} \in X_1  \\
+    2             & \mapsto x_{2,1}\in X_2   \\
+  \end{align*}\\
+  \begin{align*}
+    f_6 : \{1,2\} & \rightarrow X_1 \cup X_2 \\
+    1             & \mapsto x_{1,3} \in X_1  \\
+    2             & \mapsto x_{2,2}\in X_2   \\
+  \end{align*}\\
 \end{multicols}
-という6通りの写像を考えることができて、
+という6通りの写像を考えることができて,
 \begin{align*}
-	X_1 \times X_2 & = \{f_1,f_2,f_3,f_4,f_5,f_6\}                                                                                     \\
-	               & = \{(x_{1,1},x_{2,1}),(x_{1,1},x_{2,2}),(x_{1,2},x_{2,1}),(x_{1,2},x_{2,2}),(x_{1,3},x_{2,1}),(x_{1,3},x_{2,2})\}
+  X_1 \times X_2 & = \{f_1,f_2,f_3,f_4,f_5,f_6\}                                                                                     \\
+                 & = \{(x_{1,1},x_{2,1}),(x_{1,1},x_{2,2}),(x_{1,2},x_{2,1}),(x_{1,2},x_{2,2}),(x_{1,3},x_{2,1}),(x_{1,3},x_{2,2})\}
 \end{align*}\\
 
-\textgt{解説 4.3} また、同じ集合の直積$\prod_{\lambda \in \Lambda}A$は$A^\Lambda$と同一視される。\\
-$X^Y$という記法は$Y$から$X$への写像全体の集合であり、同じ集合の直積では$\Lambda$から$A$への写像全体の集合であるため、このように考えられる。
+\textgt{解説 4.3} また, 同じ集合の直積$\prod_{\lambda \in \Lambda}A$は$A^\Lambda$と同一視される. \\
+$X^Y$という記法は$Y$から$X$への写像全体の集合であり, 同じ集合の直積では$\Lambda$から$A$への写像全体の集合であるため, このように考えられる.
 
 \subsection{選出公理}
 
-いま、集合族$(A_\lambda)_{\lambda \in \Lambda}$において、$A_\lambda = \varnothing$であるような$\lambda \in \Lambda$が少なくとも一つ存在するならば、$\prod_{\lambda \in \Lambda}A_\lambda = \varnothing$であることは、直ちに示される。直積は写像の集合であり、その写像に対して、$a(\lambda) \in \varnothing$であるような写像は意味不明なので明らかである。そして、このことの逆に(の対偶)にあたる命題として以下がある。\\
+いま, 集合族$(A_\lambda)_{\lambda \in \Lambda}$において, $A_\lambda = \varnothing$であるような$\lambda \in \Lambda$が少なくとも一つ存在するならば, $\prod_{\lambda \in \Lambda}A_\lambda = \varnothing$であることは, 直ちに示される. 直積は写像の集合であり, その写像に対して, $a(\lambda) \in \varnothing$であるような写像は意味不明なので明らかである. そして, このことの逆に(の対偶)にあたる命題として以下がある. \\
 
 \begin{itembox}[l]{\textgt{命題 4.4} (選出公理)}
-	\begin{align}
-		\label{ac}
-		\forall \lambda \in \Lambda\:(A_\lambda \neq \varnothing) \Rightarrow \prod_{\lambda \in \Lambda}A_\lambda \neq \varnothing \tag{AC}
-	\end{align}
-	これを、選出公理という。
+  \begin{align}
+    \label{ac}
+    \forall \lambda \in \Lambda\:(A_\lambda \neq \varnothing) \Rightarrow \prod_{\lambda \in \Lambda}A_\lambda \neq \varnothing \tag{AC}
+  \end{align}
+  これを, 選出公理という.
 \end{itembox}\\
 
-\textgt{解説 4.5} 選出公理の主張することは、「全ての$\lambda \in \Lambda$に対し、$A_\lambda$からそれぞれ一つ元$a_\lambda$をいっせいに選び出して指定することができる」ということである。例えば何らかの規則、帰納法など、を用いて、選出することが可能と考えるかもしれないが、それは「いっせいに」無限個を選び出しているわけではなく、常に有限個の選択である。(無限個の選択ならば、選択の作業は終わらない) すなわち、有限個に対しては命題は自明であるが、無限個については証明できないのである。そして、この操作が可能であるということを認めることにしたのが選出公理に他ならないのである。
+\textgt{解説 4.5} 選出公理の主張することは, 「全ての$\lambda \in \Lambda$に対し, $A_\lambda$からそれぞれ一つ元$a_\lambda$をいっせいに選び出して指定することができる」ということである. 例えば何らかの規則, 帰納法など, を用いて, 選出することが可能と考えるかもしれないが, それは「いっせいに」無限個を選び出しているわけではなく, 常に有限個の選択である. (無限個の選択ならば, 選択の作業は終わらない) すなわち, 有限個に対しては命題は自明であるが, 無限個については証明できないのである. そして, この操作が可能であるということを認めることにしたのが選出公理に他ならないのである.
 
 \begin{itembox}[l]{\textgt{定義 4.6} (射影)}
-	ある直積$\prod_{\lambda \in \Lambda}A_\lambda = A\:(A \neq \varnothing)$が存在して、$\lambda$を$\Lambda$の一つの元とするとき、$A$の元$a$の$\lambda$において取る値$a(\lambda)=a_\lambda\;(\in A_\lambda)$を、$a$の$\lambda$成分、$\lambda$座標などという。またこの対応から$A$から$A_\lambda$への1つの写像が得られ、これを$A$から$A_\lambda$への射影(projection)という。記号$pr_\lambda$で表し、
-	\begin{align}
-		pr_\lambda(a) = a_\lambda
-	\end{align}
-	となる。
+  ある直積$\prod_{\lambda \in \Lambda}A_\lambda = A\:(A \neq \varnothing)$が存在して, $\lambda$を$\Lambda$の一つの元とするとき, $A$の元$a$の$\lambda$において取る値$a(\lambda)=a_\lambda\;(\in A_\lambda)$を, $a$の$\lambda$成分, $\lambda$座標などという. またこの対応から$A$から$A_\lambda$への1つの写像が得られ, これを$A$から$A_\lambda$への射影(projection)という. 記号$pr_\lambda$で表し,
+  \begin{align}
+    pr_\lambda(a) = a_\lambda
+  \end{align}
+  となる.
 \end{itembox}
 
 \section{写像に関する一定理}
 
 \begin{itembox}[l]{\textgt{定理 5.1} (写像に関する一定理)}
-	$f$を$A$から$B$への写像とする。
-	\begin{itemize}
-		\item[(a)] $f$が全射であるとき、またその時に限り、$f \circ s = I_B$となるような写像$s : B \rightarrow A$が存在する。
-		\item[(b)] $f$が単射であるとき、またその時に限り、$r \circ f = I_A$となるような写像$r : B \rightarrow A$が存在する。
-	\end{itemize}
+  $f$を$A$から$B$への写像とする.
+  \begin{itemize}
+    \item[(a)] $f$が全射であるとき, またその時に限り, $f \circ s = I_B$となるような写像$s : B \rightarrow A$が存在する.
+    \item[(b)] $f$が単射であるとき, またその時に限り, $r \circ f = I_A$となるような写像$r : B \rightarrow A$が存在する.
+  \end{itemize}
 \end{itembox}\\
 
 \textgt{証明 5.2} 定理 5.1の証明
 
-(a) $f \circ s = I_B$となるような写像$s : B \rightarrow A$が存在する場合、$f$が全射であることは第8回ゼミナール4.1から示される。逆に$f : A \rightarrow B$が全射であると仮定すると、$B$の元$b$に対して$f^{-1}(b) \neq \varnothing$。したがって、$f^{-1}(b) = A_b$とおけば、$(A_b)_{b \in B}$は空ではない集合から成る集合族といえる。ゆえに(\ref{ac})から、写像$s$のすべての$b \in B$に対し、$s(b) \in A_b$となるように元を選出できる。$s(b) \in A_b \subset A$であるから$s$は$B$から$A$への写像と考えられ、$f \circ s = I_B$が成り立つのである。\\
+(a) $f \circ s = I_B$となるような写像$s : B \rightarrow A$が存在する場合, $f$が全射であることは第8回ゼミナール4.1から示される. 逆に$f : A \rightarrow B$が全射であると仮定すると, $B$の元$b$に対して$f^{-1}(b) \neq \varnothing$. したがって, $f^{-1}(b) = A_b$とおけば, $(A_b)_{b \in B}$は空ではない集合から成る集合族といえる. ゆえに(\ref{ac})から, 写像$s$のすべての$b \in B$に対し, $s(b) \in A_b$となるように元を選出できる. $s(b) \in A_b \subset A$であるから$s$は$B$から$A$への写像と考えられ, $f \circ s = I_B$が成り立つのである. \\
 
-(b) $r \circ f = I_A$となるような写像$r : B \rightarrow A$が存在する場合、$f$が単射であることは第8回ゼミナール4.1から示される。逆に$f : A \rightarrow B$が単車であると仮定する。$f$の終集合を$V(f)$に変えた写像を$f^\prime$とすれば$f^\prime : A \rightarrow V(f)$は全単射である。その逆写像を$r^\prime : V(f) \rightarrow A$とする。そこで、$A$の1つの元$a_0$を任意に決めておき、$B$から$A$への写像$r$を
+(b) $r \circ f = I_A$となるような写像$r : B \rightarrow A$が存在する場合, $f$が単射であることは第8回ゼミナール4.1から示される. 逆に$f : A \rightarrow B$が単車であると仮定する. $f$の終集合を$V(f)$に変えた写像を$f^\prime$とすれば$f^\prime : A \rightarrow V(f)$は全単射である. その逆写像を$r^\prime : V(f) \rightarrow A$とする. そこで, $A$の1つの元$a_0$を任意に決めておき, $B$から$A$への写像$r$を
 \begin{align*}
-	r(b) =  \begin{cases}
-		         & r^\prime(b)\:\:\:(b \in V(f)\mbox{のとき}),    \\
-		         & a_0\:\:\:\:\:\:\:(b \in B - V(f)\mbox{のとき})
-	        \end{cases}
+  r(b) =  \begin{cases}
+             & r^\prime(b)\:\:\:(b \in V(f)\mbox{のとき}),    \\
+             & a_0\:\:\:\:\:\:\:(b \in B - V(f)\mbox{のとき})
+          \end{cases}
 \end{align*}
-と定義すれば$r \circ f = I_B$は次にように示される。\\
-$a$を$A$の任意の元都市、$f(a)=f^\prime(a)=b$とすれば、$b \in V(f)$で$r^\prime = f^{\prime-1}$であるから、$a=r^\prime(b)=r(b)$。したがって$$(r \circ f)(a) = r(f(a)) = r(b) = a = I_A(a)$$ゆえに$r \circ f = I_A$\QED\\
+と定義すれば$r \circ f = I_B$は次にように示される. \\
+$a$を$A$の任意の元とし, $f(a)=f^\prime(a)=b$とすれば, $b \in V(f)$で$r^\prime = f^{\prime-1}$であるから, $a=r^\prime(b)=r(b)$. したがって$$(r \circ f)(a) = r(f(a)) = r(b) = a = I_A(a)$$ゆえに$r \circ f = I_A$\QED\\
 
-\textgt{解説 5.3} (a)のときの$s$を右逆写像、(b)のときの$r$を左逆写像という。\\
+\textgt{解説 5.3} (a)のときの$s$を右逆写像, (b)のときの$r$を左逆写像という. \\
 
 \begin{itembox}[l]{\textgt{定理 5.4} (系)}
-	$A,B$を二つの集合とするとき、$A$から$B$への単射が存在する必要十分条件は、$B$から$A$への全射が存在することである。
+  $A,B$を二つの集合とするとき, $A$から$B$への単射が存在する必要十分条件は, $B$から$A$への全射が存在することである.
 \end{itembox}\\
 
-\textgt{証明 5.5} $A$から$B$への単射$\varphi$が存在すれば、定理 5.1 (b)によって$\psi \circ \varphi = I_B$となるような$B$から$A$への写像$\psi$が存在し、この$\psi$は定理 5.1 (a)により、全射である。逆に、$B$から$A$への全射$\psi$が存在すれば、(a)によって$\psi \circ \varphi = I_A$となる$A$から$B$への写像$\varphi$が存在し、この$\varphi$は(b)にり単射となる。
+\textgt{証明 5.5} $A$から$B$への単射$\varphi$が存在すれば, 定理 5.1 (b)によって$\psi \circ \varphi = I_B$となるような$B$から$A$への写像$\psi$が存在し, この$\psi$は定理 5.1 (a)により, 全射である. 逆に, $B$から$A$への全射$\psi$が存在すれば, (a)によって$\psi \circ \varphi = I_A$となる$A$から$B$への写像$\varphi$が存在し, この$\varphi$は(b)にり単射となる.
 
 \section{多変数の写像}
 
 \begin{itembox}[l]{\textgt{定義 6.1} (多変数の写像)}
-	ある集合$A$の元$a$が$(a_1,a_2,\cdots,a_n)$の形をしているとき、その集合を定義域とする写像$f$の像$f(a)$は$f((a_1,a_2,\cdots,a_n))$、あるいは簡単に$f(a_1,a_2,\cdots,a_n)$と書かれる。この記法を用いる場合、$f$はまた「$n$変数の写像」であるとも言われる。
+  ある集合$A$の元$a$が$(a_1,a_2,\cdots,a_n)$の形をしているとき, その集合を定義域とする写像$f$の像$f(a)$は$f((a_1,a_2,\cdots,a_n))$, あるいは簡単に$f(a_1,a_2,\cdots,a_n)$と書かれる. この記法を用いる場合, $f$はまた「$n$変数の写像」であるとも言われる.
 \end{itembox}\\
 
-\textgt{解説 6.2} 「$M \times M$から$M$への写像」という形の「2変数の写像」は数学でしばしば現れる。\\
+\textgt{解説 6.2} 「$M \times M$から$M$への写像」という形の「2変数の写像」は数学でしばしば現れる. \\
 例えば$x,y$を実数とすると
 \begin{align}
-	f(x,y) & = x + y \\
-	g(x,y) & = xy
+  f(x,y) & = x + y \\
+  g(x,y) & = xy
 \end{align}
-とおけば、$f,g$はいずれも$R \times R$から$R$への写像である。\\
+とおけば, $f,g$はいずれも$R \times R$から$R$への写像である. \\
 
-また、$X$を1つの集合として、$\mathfrak{P}(X)$の元$A,B$に対して$\varphi(A,B) = A \cup B,\:\psi(A,B) = A \cap B$とおけば$\varphi,\psi$は$\mathfrak{P}(X) \times \mathfrak{P}(X)$から$\mathfrak{P}(X)$への写像となる。\\
+また, $X$を1つの集合として, $\mathfrak{P}(X)$の元$A,B$に対して$\varphi(A,B) = A \cup B,\:\psi(A,B) = A \cap B$とおけば$\varphi,\psi$は$\mathfrak{P}(X) \times \mathfrak{P}(X)$から$\mathfrak{P}(X)$への写像となる. \\
 
-一般に集合$M$の2元から$M$の1つの元を作り出す操作を,$M$における\textgt{算法}または\textgt{演算}という。
+一般に集合$M$の2元から$M$の1つの元を作り出す操作を, $M$における\textgt{算法}または\textgt{演算}という.
 
 \section{問題}
 
@@ -285,43 +285,43 @@ $a$を$A$の任意の元都市、$f(a)=f^\prime(a)=b$とすれば、$b \in V(f)$
 
 $\left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B = \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)$を証明せよ\\
 
-両側の包括関係を示す。\\
+両側の包括関係を示す. \\
 
 左辺からの右辺への包括関係\\
-任意の元$x$が$\left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B$に属していると仮定する。すると、$$x \in \left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B$$となり、$x \in \bigcup_{\lambda \in \Lambda}A_\lambda$かつ$x \in B$となる。\\
-よって$x \in \bigcup_{\lambda \in \Lambda}A_\lambda$から、ある任意の$\lambda_0 \in \Lambda$が存在して$$ x \in A_{\lambda_0} $$となる。\\
-したがって$x \in A_{\lambda_0} \cap B$となり$x \in \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)$となる。\\
-これによって、$$\left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B \subseteq \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)$$\\
+任意の元$x$が$\left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B$に属していると仮定する. すると, $$x \in \left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B$$となり, $x \in \bigcup_{\lambda \in \Lambda}A_\lambda$かつ$x \in B$となる. \\
+よって$x \in \bigcup_{\lambda \in \Lambda}A_\lambda$から, ある任意の$\lambda_0 \in \Lambda$が存在して$$ x \in A_{\lambda_0} $$となる. \\
+したがって$x \in A_{\lambda_0} \cap B$となり$x \in \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)$となる. \\
+これによって, $$\left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B \subseteq \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)$$\\
 
 右辺から左辺への包括関係\\
-任意の元$x$が$\bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)$に属していると仮定する。すると、$$x \in \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)$$となり、ある$\lambda_0 \in \Lambda$に対して$x \in A_{\lambda_0} \cap B$が成り立つ。よって、$x \in A_{\lambda_0}$かつ$x \in B$となる。\\
-よって$x \in A_{\lambda_0}$ならば$x \in \bigcup_{\lambda \in \Lambda}A_\lambda$となり、$x \in \left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B$が成り立つ。\\
-したがって、$$\left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B \supseteq \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)$$\\
-よって左辺から右辺、右辺から左辺の両方の包含関係が成り立つため、$$\left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B = \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)$$となる。\QED
+任意の元$x$が$\bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)$に属していると仮定する. すると, $$x \in \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)$$となり, ある$\lambda_0 \in \Lambda$に対して$x \in A_{\lambda_0} \cap B$が成り立つ. よって, $x \in A_{\lambda_0}$かつ$x \in B$となる. \\
+よって$x \in A_{\lambda_0}$ならば$x \in \bigcup_{\lambda \in \Lambda}A_\lambda$となり, $x \in \left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B$が成り立つ. \\
+したがって, $$\left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B \supseteq \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)$$\\
+よって左辺から右辺, 右辺から左辺の両方の包含関係が成り立つため, $$\left( \bigcup_{\lambda \in \Lambda}A_\lambda \right) \cap B = \bigcup_{\lambda \in \Lambda}(A_\lambda \cap B)$$となる. \QED
 
 \subsection{(5.1)'}
 
 $\left( \bigcap_{\lambda \in \Lambda}A_\lambda \right) \cup B = \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)$を証明せよ\\
 
-両側の包括関係を示す。\\
+両側の包括関係を示す. \\
 
 左辺からの右辺への包括関係\\
-任意の元$x$が$\left( \bigcap_{\lambda \in \Lambda}A_\lambda \right) \cup B$に属していると仮定する。すると、$$x \in \left( \bigcap_{\lambda \in \Lambda}A_\lambda \right) \cup B$$となり、$x \in \bigcap_{\lambda \in \Lambda}A_\lambda$または$x \in B$となる。\\
-$x \in \bigcap_{\lambda \in \Lambda}A_\lambda$のとき、$x$は$\Lambda$のすべて元$\lambda$に対して、$A_\lambda$に属す。つまり$$\forall \lambda \in \Lambda,\;x \in A_\lambda$$となる。\\
-したがって、$\forall \lambda \in \Lambda,\;x \in A_\lambda \cup B$となり$x \in \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)$となる。
-これによって、$$\left( \bigcap_{\lambda \in \Lambda}A_\lambda \right) \cup B \subseteq \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)$$\\
+任意の元$x$が$\left( \bigcap_{\lambda \in \Lambda}A_\lambda \right) \cup B$に属していると仮定する. すると, $$x \in \left( \bigcap_{\lambda \in \Lambda}A_\lambda \right) \cup B$$となり, $x \in \bigcap_{\lambda \in \Lambda}A_\lambda$または$x \in B$となる. \\
+$x \in \bigcap_{\lambda \in \Lambda}A_\lambda$のとき, $x$は$\Lambda$のすべて元$\lambda$に対して, $A_\lambda$に属す. つまり$$\forall \lambda \in \Lambda,\;x \in A_\lambda$$となる. \\
+したがって, $\forall \lambda \in \Lambda,\;x \in A_\lambda \cup B$となり$x \in \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)$となる.
+これによって, $$\left( \bigcap_{\lambda \in \Lambda}A_\lambda \right) \cup B \subseteq \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)$$\\
 
 右辺から左辺への包括関係\\
-任意の元$x$が$\bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)$に属していると仮定する。すると、$x \in \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)$となり、これはすべての$\lambda \in \Lambda$に対して$$x \in A_\lambda \cup B$$が成り立つことを意味している。よって、任意の$\lambda$に対して$x \in A_\lambda$または$x \in B$となる。\\
-任意の$\lambda$に対して$x \in A_\lambda$から$$x \in \bigcap_{\lambda \in \Lambda}A_\lambda$$となる。\\
+任意の元$x$が$\bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)$に属していると仮定する. すると, $x \in \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)$となり, これはすべての$\lambda \in \Lambda$に対して$$x \in A_\lambda \cup B$$が成り立つことを意味している. よって, 任意の$\lambda$に対して$x \in A_\lambda$または$x \in B$となる. \\
+任意の$\lambda$に対して$x \in A_\lambda$から$$x \in \bigcap_{\lambda \in \Lambda}A_\lambda$$となる. \\
 したがって$x \in \left( \bigcap_{\lambda \in \Lambda}A_\lambda \right) \cup B$となり$$\left( \bigcap_{\lambda \in \Lambda}A_\lambda \right) \cup B \supseteq \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)$$\\
-よって左辺から右辺、右辺から左辺の両方の包含関係が成り立つため、$$\left( \bigcap_{\lambda \in \Lambda}A_\lambda \right) \cup B = \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)$$となる。\QED
+よって左辺から右辺, 右辺から左辺の両方の包含関係が成り立つため, $$\left( \bigcap_{\lambda \in \Lambda}A_\lambda \right) \cup B = \bigcap_{\lambda \in \Lambda}(A_\lambda \cup B)$$となる. \QED
 
 
 %%参考文献%%
 %\newpage
 \begin{thebibliography}{99}
-	\bibitem{text}松坂和夫，集合位相入門，岩波書店，1968．
+  \bibitem{text}松坂和夫，集合位相入門，岩波書店，1968．
 \end{thebibliography}
 
 \end{document}
