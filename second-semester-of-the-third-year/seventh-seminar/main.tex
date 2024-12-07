@@ -7,7 +7,8 @@
 \usepackage{bm}
 \usepackage{mathtools}
 \usepackage{multicol}
-\usepackage[dvipdfmx]{graphicx}
+\usepackage{graphicx}
+\usepackage[dvipdfmx]{color}
 \usepackage{algorithm}%擬似コードを書く場合
 \usepackage{algorithmic}%擬似コードを書く場合
 \usepackage{tcolorbox}
@@ -100,7 +101,7 @@
 \begin{itembox}[l]{\textgt{定義 1.3} (時不変なマルコフ連鎖)}
 	マルコフ連鎖において, すべての$n = 1, 2, \ldots$について
 	\begin{align}
-		\mathbb{P}[X_{n+1} = b | X_n = a] = \mathbb{P}[X_2 = b, X_1 = a], \forall a, b \in X
+		\mathbb{P}[X_{n+1} = b | X_n = a] = \mathbb{P}[X_2 = b, X_1 = a], \forall a, \forall b \in X
 	\end{align}
 	が成り立つとき, 時不変であるという.
 	つまり, マルコフ連鎖が時間に依存しない場合, すなわち条件付確率$p(x_{n+1}|x_n)$が$n$に依存しない場合である.
@@ -148,7 +149,7 @@
 		\item 背景
 		      \begin{itemize}
 			      \item マルコフ連鎖の解析において, 全ての状態が互いにアクセス可能であることが重要です.
-			            \item「アクセス可能性」があると, 連鎖が1つの統一されたシステムとして扱えるため, 状態分布が特定のパターン（例えば定常分布）に収束する性質が研究できます.
+			      \item「アクセス可能性」があると, 連鎖が1つの統一されたシステムとして扱えるため, 状態分布が特定のパターン（例えば定常分布）に収束する性質が研究できます.
 		      \end{itemize}
 		\item なぜこれが既約性か\\
 		      「既約（irreducible）」という言葉は数学的には「分割できない」という意味です.
@@ -203,7 +204,7 @@
 }
 \begin{align}
 	p(x_{n+1}) = \sum_{x_n} p(x_n)P_{x_nx_{n+1}}
-\end{align}\\
+\end{align}
 
 \textgt{例 1.6} 例えば, さいころの目が$1, 2, 3, 4, 5, 6$の6つの状態を持つとして
 \begin{itemize}
@@ -216,7 +217,7 @@
 
 \textgt{注意 1.7} 時刻$n+1$における分布が時刻$n$と同じであるような状態の分布を, 定常分布（stationary distribution）と呼ぶ.\\
 
-定常分布と呼ばれる理由は, マルコフ連鎖の初期状態が定常分布に従って選ばれる場合, そのマルコフ連鎖が定常過程を形成するためである. 有限状態のマルコフ連鎖が既約かつ非周期的である場合, 定常分布は一意であり, 任意の初期分布から始めても, 時刻$n$における分布$X_n$は$n \rightarrow \infty$の時, 定常分布に収束する.
+定常分布と呼ばれる理由は, マルコフ連鎖の初期状態が定常分布に従って選ばれる場合, そのマルコフ連鎖が定常過程を形成するためである. 有限状態のマルコフ連鎖が既約かつ非周期的である場合, 定常分布は一意であり, 任意の初期分布から始めても, 時刻$n$における分布$X_n$は$n \rightarrow \infty$の時, 定常分布に収束する.\\
 \footnote{
 	\subsection*{定常分布の性質と収束の理由}
 
@@ -224,9 +225,9 @@
 
 	\subsubsection*{1. 定常分布の定義}
 	定常分布 $\pi = (\pi_1, \pi_2, \ldots, \pi_k)$ とは, 以下を満たす確率分布です：
-	\[
-		\pi P = \pi,
-	\]
+	\begin{align*}
+		\pi P = \pi
+	\end{align*}
 	ここで $P$ はマルコフ連鎖の遷移確率行列を表します. つまり, 状態が定常分布に従って選ばれている場合, 次の時刻でも分布は変化しません.
 
 	\subsubsection*{2. 定常分布の一意性}
@@ -240,14 +241,14 @@
 
 	\subsubsection*{3. 任意の初期分布からの収束}
 	任意の初期分布 $\mu_0$ に対して, 時刻 $n$ における分布 $\mu_n$ は以下のように遷移します：
-	\[
+	\begin{align*}
 		\mu_{n+1} = \mu_n P.
-	\]
+	\end{align*}
 
 	このとき, 以下が成り立ちます：
-	\[
+	\begin{align*}
 		\lim_{n \to \infty} \mu_n = \pi,
-	\]
+	\end{align*}
 	ここで $\pi$ は定常分布です.
 
 	この収束が成り立つ理由は次の通りです：
@@ -255,9 +256,9 @@
 		\item 既約性により, 状態間の「混ざり合い」が保証されるため, 初期分布の影響が時間とともに薄れていきます.
 		\item 非周期性により, 状態への到達が特定の周期に縛られず, 任意のタイミングで分布が安定します.
 		\item 遷移確率行列のべき乗により, 次が成立します：
-		      \[
+		      \begin{align*}
 			      \lim_{n \to \infty} P^n = \mathbf{1} \pi,
-		      \]
+		      \end{align*}
 		      ここで $\mathbf{1}$ は全ての成分が $1$ の行ベクトルです. このため, 初期分布 $\mu_0$ は時間が経つと定常分布 $\pi$ に収束します.
 	\end{itemize}
 
@@ -272,12 +273,20 @@
 \textgt{例 1.8} 以下に示す遷移確率行列を持つ図\ref{example-1.8}のような2状態マルコフ連鎖を考える.
 \begin{align}
 	P = \begin{bmatrix}
-		    1-\alpha & \alpha \\
-		    \beta    & 1\beta
-	    \end{bmatrix}
+		1-\alpha & \alpha  \\
+		\beta    & 1-\beta
+	\end{bmatrix}
 \end{align}
 
-定常分布を, それぞれ状態1と状態2の定常確率を成分とするベクトル$\mu$で表すとする. 定常確率は, 方程式$P = \mu$を解くか, より単純に確率のバランス
+定常分布を, それぞれ状態1と状態2の定常確率を成分とするベクトル$\mu$で表すとする. 定常確率は, 方程式$\mu P = \mu$を解くか, より単純に確率のバランスをとることによって求めることができる. 定常分布の場合, 状態遷移グラフのどのカット・セットでも, 純確率流（net probablility flow）はゼロである. これを図\ref{example-1.8}に当てはめると, 次のようになる.
+\begin{align}
+	\mu_1\alpha = \mu_2\beta
+\end{align}
+また確率の総和は1であるため
+\begin{align}
+	\mu_1 = \frac{\beta}{\alpha + \beta},\: \mu_2 = \frac{\alpha}{\alpha + \beta}
+\end{align}
+もしマルコフ連鎖の初期状態がこの定常分布に従って選ばれる場合, 結果として得られる過程は定常的になる.
 \footnote{
 	\subsection*{確率のバランスを取るとは？}
 
@@ -291,46 +300,45 @@
 	\begin{enumerate}
 		\item \textbf{状態遷移のバランス}
 		      任意の状態 $i$ について, 状態 $i$ に「入る確率の総和」と「出る確率の総和」が等しいこと：
-		      \[
+		      \begin{align*}
 			      \sum_{j} \mu_j P_{ji} = \mu_i
-		      \]
+		      \end{align*}
 		      ここで, $\mu_j$ は状態 $j$ の定常確率, $P_{ji}$ は状態 $j$ から状態 $i$ への遷移確率です.
 
 		\item \textbf{確率の総和が1}
 		      定常分布は確率であるため, 全状態の確率の総和は1になります：
-		      \[
+		      \begin{align*}
 			      \sum_{i} \mu_i = 1
-		      \]
+		      \end{align*}
 	\end{enumerate}
 
 	\subsection*{具体例: 2状態マルコフ連鎖}
 	2つの状態を持つマルコフ連鎖を考えます. 遷移確率行列 $P$ は以下の通りとします：
 
-	\[
+	\begin{align*}
 		P =
 		\begin{bmatrix}
 			1-\alpha & \alpha  \\
 			\beta    & 1-\beta
 		\end{bmatrix}
-	\]
+	\end{align*}
 
 	状態1と状態2の定常確率をそれぞれ $\mu_1, \mu_2$ とすると, 次の条件を満たします：
 
-	\begin{align}
-		\mu_1 \alpha  & = \mu_2 \beta, \tag{1} \\
-		\mu_1 + \mu_2 & = 1. \tag{2}
-	\end{align}
+	\begin{align*}
+		\mu_1 \alpha  & = \mu_2 \beta \\
+		\mu_1 + \mu_2 & = 1.
+	\end{align*}
 
 	これを解くと, 定常分布は以下のようになります：
 
-	\[
+	\begin{align*}
 		\mu_1 = \frac{\beta}{\alpha + \beta}, \quad \mu_2 = \frac{\alpha}{\alpha + \beta}.
-	\]
+	\end{align*}
 
 	\subsection*{定常分布と過程の定常性}
 	もしマルコフ連鎖の初期状態が定常分布 $\mu$ に従って選ばれる場合, 結果として得られる過程は定常的になります.
 }
-をとることによって求めることができる. 定常分布の場合, 状態遷移グラフのどのカット・セットでも, 純確率流（net probablility flow）
 \footnote{
 
 	\subsection*{純確率流 (Net Probability Flow)}
@@ -339,9 +347,9 @@
 	純確率流は, あるシステム内で特定の状態 \(i\) における確率の流入と流出の差を表します.
 	数学的には以下のように定義されます：
 
-	\[
+	\begin{align*}
 		\text{Net Probability Flow for state } i = \sum_{j} P_{ji} - \sum_{j} P_{ij}
-	\]
+	\end{align*}
 
 	ここで：
 	\begin{itemize}
@@ -357,17 +365,17 @@
 	\begin{enumerate}
 		\item \textbf{平衡状態}:
 		      純確率流が0の場合, システムは平衡状態です. この場合, 各状態への確率の流入と流出が完全に釣り合っています.
-		      \[
+		      \begin{align*}
 			      \sum_{j} P_{ji} = \sum_{j} P_{ij}, \quad \forall i
-		      \]
+		      \end{align*}
 
 		      例：気体分子がボックス内で均等に分布している状態.
 
 		\item \textbf{非平衡状態}:
 		      純確率流が0でない場合, システムは非平衡状態にあります. この場合, 確率的な変化がまだ進行中です.
-		      \[
+		      \begin{align*}
 			      \sum_{j} P_{ji} \neq \sum_{j} P_{ij}, \quad \text{for some } i
-		      \]
+		      \end{align*}
 
 		      例：熱エネルギーが高温から低温へ移動している状況.
 	\end{enumerate}
@@ -385,25 +393,21 @@
 		\item \textbf{経済学・ネットワーク解析}:
 		      資金, 情報, または人の流れを解析するためのツールとして使用されます.
 	\end{itemize}
-
-
 }
-はゼロである. これを図\ref{example-1.8}に当てはめると, 次のようになる.
-\begin{align}
-	\mu_1\alpha = \mu_2\beta
-\end{align}
-また確率の総和は1であるため
-\begin{align}
-	\mu_1 = \frac{\beta}{\alpha + \beta},\: \mu_2 = \frac{\alpha}{\alpha + \beta}
-\end{align}
-もしマルコフ連鎖の初期状態がこの定常分布に従って選ばれる場合, 結果として得られる過程は定常的になる.
 
 \textgt{解説 1.9} 時刻$n$における状態$X_n$のエントロピー$H(X_n)$は以下の式で与えられる.
 \begin{align}
 	H(X_n) = H\left(\frac{\beta}{\alpha + \beta}, \frac{\alpha}{\alpha + \beta}\right)
-\end{align}
+\end{align}\\
 
-ここで, $H(p, q)$は確率$p, q$の同時エントロピーだが, これは過程全体のエントロピー増加率$H(X_1, X_2, \ldots, X_n)$を表すものではない.
+これは過程全体のエントロピー増加率$H(X_1, X_2, \ldots, X_n)$を表すものではない. 確率変数$X$同士の依存関係が影響を与え増加の割合を減らすためである.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 5.0cm]{example1.8.png}
+	\caption{2状態マルコフ連鎖}
+	\label{example-1.8}
+\end{figure}
 \footnote{
 	\subsection*{エントロピー $H(X_n)$ と結合エントロピー $H(X_1, X_2, \ldots, X_n)$ の違いについて}
 
@@ -412,44 +416,247 @@
 	\subsubsection*{1. $H(X_n)$ は単一の状態のエントロピー}
 	エントロピー $H(X_n)$ は, 時刻 $n$ における単一のランダム変数 $X_n$ の不確実性を測るものであり, これは定常分布によって記述されます. マルコフ連鎖が定常分布に従う場合, $H(X_n)$ は以下のように表されます：
 
-	\[
+	\begin{align*}
 		H(X_n) = -\mu_1 \log \mu_1 - \mu_2 \log \mu_2 = H\left(\frac{\beta}{\alpha + \beta}, \frac{\alpha}{\alpha + \beta}\right)
-	\]
+	\end{align*}
 
 	ここで, $\mu_1 = \frac{\beta}{\alpha + \beta}$ および $\mu_2 = \frac{\alpha}{\alpha + \beta}$ は定常分布における状態1と状態2の確率を表します.
 
 	\subsubsection*{2. $H(X_1, X_2, \ldots, X_n)$ は結合エントロピー}
 	結合エントロピー $H(X_1, X_2, \ldots, X_n)$ は, $n$ 個のランダム変数をまとめて記述するのに必要な情報量を測るもので, 以下のように定義されます：
 
-	\[
+	\begin{align*}
 		H(X_1, X_2, \ldots, X_n) = - \sum_{x_1, x_2, \ldots, x_n} \text{Pr}(X_1 = x_1, X_2 = x_2, \ldots, X_n = x_n) \log \text{Pr}(X_1 = x_1, X_2 = x_2, \ldots, X_n = x_n)
-	\]
+	\end{align*}
 
 	この結合エントロピーは, 単一のエントロピー $H(X_n)$ を単純に足し合わせたものとは異なり, ランダム変数間の依存関係を考慮します.
 
 	\subsubsection*{3. 依存関係の影響}
 	マルコフ連鎖において, ランダム変数 $X_1, X_2, \ldots, X_n$ の間には依存関係があります. この依存関係により, 結合エントロピー $H(X_1, X_2, \ldots, X_n)$ は以下のような不等式を満たします：
 
-	\[
+	\begin{align*}
 		H(X_1, X_2, \ldots, X_n) \leq \sum_{i=1}^n H(X_i)
-	\]
+	\end{align*}
 
 	この不等式は, 状態間の依存関係によって情報量の「重複」が発生し, それがエントロピーを減少させることを意味します.
 
 	\subsubsection*{4. エントロピー率 $H(X)$}
 	過程全体のエントロピー増加率は, 結合エントロピー $H(X_1, X_2, \ldots, X_n)$ をランダム変数の数 $n$ で割り, その極限を取ることで定義されます：
 
-	\[
+	\begin{align*}
 		H(X) = \lim_{n \to \infty} \frac{1}{n} H(X_1, X_2, \ldots, X_n)
-	\]
+	\end{align*}
 
 	この $H(X)$ は, 1ステップあたりの平均情報量を表し, 過程全体のエントロピー増加率を正確に測る指標となります.
 
 	\subsubsection*{5. 結論}
 	単一のエントロピー $H(X_n)$ は時刻 $n$ における単独の状態の不確実性を表しますが, 結合エントロピー $H(X_1, X_2, \ldots, X_n)$ は, 過程全体の情報量を評価するものであり, 依存関係を考慮した増加率を持ちます. この違いにより, $H(X_n)$ は過程全体のエントロピー増加率を完全には表現しないのです.
-
 }
-確率変数$X$同士の依存関係が影響を与えるためである.
+
+\section{Entropy rate}
+
+確率変数の列が$n$個ある場合, その列のエントロピーが$n$に伴ってどのように増加するかを考える.\\
+
+\begin{itembox}[l]{\textgt{定義 2.1} (エントロピーレート)}
+	確率過程$\{X_i\}$のエントロピーレート（entropy rate）は次のように定義される.
+	\begin{align}
+		H(\mathcal{X}) = \lim_{n \rightarrow \infty} \frac{1}{n}H(X_1, X_2, \ldots, X_n)
+	\end{align}
+	ただし, 極限が存在する時
+\end{itembox}\\
+
+\textgt{例 2.2} タイプライター\\
+
+$m$個の等確率の文字を出力する場合を考える. このタイプライターは, 長さ$n$の$m^n$通りの系列を生成でき, それらはすべて等確率である. よって, $H(X_1, X_2, \ldots, X_n) = \log m^n$となり, エントロピーレートは$H(\mathcal{X}) = \log m \: \mbox{（一文字あたりのビット数）}$となる.\\
+
+\textgt{解説 2.3} タイプライターが$m$個の文字を等確率で生成することから, 各文字のエントロピーは
+\begin{align}
+	H(X) & = - \sum_{i=1}^{m} p(x_i)\log p(x_i)            \\
+	     & = - \sum_{i=1}^{m} \frac{1}{m} \log \frac{1}{m} \\
+	     & = \log m
+\end{align}
+独立同分布であるから長さ$n$の文字列全体のエントロピーは
+\begin{align}
+	H(X_1, X_2, \ldots, X_n) = n \cdot H(X) = n \log m
+\end{align}
+よって, エントロピーレートは
+\begin{align}
+	H(\mathcal{X}) = \lim_{n \rightarrow \infty} \frac{1}{n} H(X_1, X_2, \ldots, X_n) = \log m
+\end{align}
+\footnote{
+	\subsection*{エントロピーレートと状態間の遷移}
+
+	エントロピーレートが「状態$t$から$t+1$に遷移する際のエントロピー」と解釈されるのは, 文字列が依存関係を持つ場合です.
+	\begin{itemize}
+		\item タイプライターの例では, 文字列の各文字が独立しており, 次の文字$X_{t+1}$は前の文字$X_t$に依存しません. この場合, エントロピーレートは単純に一文字あたりの情報量$H(X)$と等しくなります.
+		      \begin{align*}
+			      H(\mathcal{X}) = H(X)
+		      \end{align*}
+		\item 一方, 文字が依存関係を持つ場合（例えばマルコフ連鎖のような場合）, 状態$t$から$t+1$ への遷移に必要な情報量（条件付きエントロピー）を考える必要があります. この場合, エントロピー率は次のように計算されます：
+		      \begin{align*}
+			      H(\mathcal{X})= \lim_{n \rightarrow \infty} \frac{1}{n} H(X_1, X_2, \ldots, X_n) = H(X_{n+1} | X_n)
+		      \end{align*}
+	\end{itemize}
+}
+
+\textgt{例 2.4} 独立同分布の確率変数\\
+
+$X_1, X_2, \ldots$がi.i.dである場合, 同時エントロピーは
+\begin{align}
+	H(X_1, X_2, \ldots, X_n) = nH(X)
+\end{align}
+と表せ, エントロピーレートは
+\begin{align}
+	H(\mathcal{X}) = \lim \frac{H(X_1, X_2, \ldots, X_n)}{n} = \lim \frac{nH(X_1)}{n} = H(X_1)
+\end{align}
+と表せる. これは, シンボル当たりのエントロピーレートとして期待させる.\\
+
+\textgt{例 2.5} 独立だが同分布ではない確率変数\\
+
+$X_1, X_2, \ldots$が独立であるが, 同一分布ではない場合, 同時エントロピーは
+\begin{align}
+	H(X_1, X_2, \ldots, X_n) = \sum_{i=1}^{n} H(X_i)
+\end{align}
+と表せる.\\
+
+しかし, $H(X_i)$がすべて等しくはなく, $\frac{1}{n} \sum H(X_i)$の極限が存在しないように, $X_1, X_2, \ldots$上の分布の列を選ぶこともできる. 例として, $p_i = \mathbb{P}[X_i = 1]$が定数ではなく$i$の関数であるランダムな2進数列を考え, 極限が存在しないように調整する. 例えば$k = 0, 1, \ldots$として
+\begin{align}
+	p_i = \begin{cases}
+		 & 0.5 \:\:\: 2^k < \log\log i \leq 2^k +1 \mbox{のとき},        \\
+		 & 0 \:\:\:\:\:\: 2^k +1 < \log\log i \leq 2^k +2 \mbox{のとき}.
+	\end{cases}
+\end{align}
+のように定義する.
+すると, 指数的に長い$H(X_i)=0$の後に続いて, $H(X_i) = 1$となるような, 任意に長い広がりが生じる. したがって, $H(X_i)$は0と1の間を振動し, 極限を持たない. そのため, この確率過程で$H(\mathcal{X})$は定義されない.\\
+
+\begin{itembox}[l]{\textgt{定義 2.7} (関連するエントロピーレート)}
+	\begin{align}
+		H^\prime(\mathcal{X}) = \lim_{n \rightarrow \infty} H(X_n | X_{n-1}, X_{n-2}, \ldots X_1)
+	\end{align}
+	ただし, 極限が存在する時
+\end{itembox}\\
+
+\textgt{解説 2.8} 2つの量$H(\mathcal{X}), H^\prime(\mathcal{X})$はエントロピーレートに関する2つの異なる概念に対応する. $H(\mathcal{X})$は$n$個の確率変数に対するシンボル当たりのエントロピーを表し, $H^\prime(\mathcal{X})$は過去が与えられた場合の最後の確率変数に関する条件付エントロピーを表す.\\
+
+\begin{itembox}[l]{\textgt{定理 2.9} (チェザロ平均（cesáro mean）)}
+	もし$a_n \rightarrow a$かつ$b_n = \frac{1}{n} \sum_{i=1}^{n} a_i$ならば$b_n \rightarrow a$
+\end{itembox}\\
+
+\textgt{証明 2.10} 2.9の証明（概要）\\
+
+列$\{a_n\}$のほとんどの項が最終的に$a$に近くなるため, $b_n$（最初の$n$項の平均）は最終的に$a$近づく.\\
+
+\textgt{証明 2.11} 2.9の形式的な証明\\
+
+任意の$\epsilon > 0$として, $a_n \rightarrow a$であるから, ある数$N(\epsilon)$が存在し, すべての$n \geq  N(\epsilon)$に対して\begin{align}
+	|a_n - a| \leq \epsilon
+\end{align}
+を満たす.
+したがって,
+\begin{align}
+	|b_n - a| & = |\frac{1}{n} \sum_{i=1}^{n} (a_i -a)|                                                             \\
+	          & \leq \frac{1}{n} \sum_{i=1}^{n} |a_n -a|                                                            \\
+	          & = \frac{1}{n} \sum_{i=1}^{N(\epsilon)} |a_n -a| + \frac{1}{n} \sum_{i=N(\epsilon)+1}^{n} |a_n -a|   \\
+	          & \leq\frac{1}{n} \sum_{i=1}^{N(\epsilon)} |a_n -a| + \frac{1}{n} \sum_{i=N(\epsilon)+1}^{n} \epsilon \\
+	          & = \frac{1}{n} \sum_{i=1}^{N(\epsilon)} |a_n -a| + \frac{n - N(\epsilon)}{n} \epsilon                \\
+	          & \leq \frac{1}{n} \sum_{i=1}^{N(\epsilon)} |a_n -a| + \epsilon
+\end{align}
+がすべての$n \geq  N(\epsilon)$に対して成り立つ. 最初の項は$n \rightarrow \infty$に従って, 0に近づため, $n$を十分大きくとることによって, $|b_n - a| \leq 2\epsilon$とすることができる. よって, $n \rightarrow \infty$に対して$b_n \rightarrow a$となる. \qed\\
+
+\begin{itembox}[l]{\textgt{定理 2.12}}
+	定常過程において, 条件付エントロピー$H(X_n | X_{n-1}, X_{n-2}, \ldots, X_1)$は$n$に対して単調非増加であり, 極限$H^\prime(\mathcal{X})$を持つ.
+\end{itembox}\\
+
+\textgt{証明 2.13} 条件付エントロピーの定義から条件付けはエントロピーを減らし, 定常性から時間インデックスに関するシフトに対して不変であるから,
+\begin{align}
+	H(X_{n+1} | X_n, X_{n-1}, \ldots, X_1)
+	 & \leq H(X_{n+1} | X_n, X_{n-1}, \ldots, X_2) \\
+	 & = H(X_n | X_{n-1}, X_{n-2}, \ldots, X_1)
+\end{align}
+が成り立つ. よって$H(X_n | X_{n-1}, X_{n-2}, \ldots, X_1)$は非負の減少列であるため, 極限値$H(\mathcal{X})$を持つ.\\
+
+\begin{itembox}[l]{\textgt{定理 2.14}}
+	定常過程に対して, 式（10）および式（20）の極限は等しい.
+	\begin{align}
+		H(\mathcal{X}) = H^\prime(X).
+	\end{align}
+\end{itembox}\\
+
+\textgt{証明 2.15} チェイン則によって
+\begin{align}
+	\frac{H(X_1, X_2, \ldots, X_n)}{n} = \frac{1}{n} \sum_{i=1}^{n} H(X_i | X_{i-1}, \ldots, X_1),
+\end{align}
+つまり, エントロピーレートは条件付きエントロピーの時間平均となる. 条件付きエントロピーが極限値$H^\prime$に収束することから, 定理（2.9）を用いることによって, それら全体にわたる平均は極限値を持ち, それは各項の極限値$H^\prime$に等しい. よって定理（2.12）より
+\begin{align}
+	H(\mathcal{X}) & = \lim_{n \rightarrow \infty} \frac{1}{n} H(X_1, X_2, \ldots, X_n) = \lim_{n \rightarrow \infty} H(X_n | X_{n-1}, \ldots, X_1) \\
+	               & = H^\prime(\mathcal{X})\qed
+\end{align}\\
+
+\textgt{解説 2.16} 確率過程のエントロピーレートの重要性は定常エルゴード過程（stationary ergodic process）に対する漸近等分割性に由来する. テキスト\cite{text}16.8にて任意の定常エルゴード過程に対して
+\begin{align}
+	\frac{1}{n}\log p(X_1, X_2, \ldots, X_n) \rightarrow H(\mathcal{X}) \: (n \rightarrow \infty)
+\end{align}
+が確率1で成り立つことを証明する. これは第3章の定理を定常エルゴード過程に拡張することを容易にする.\\
+
+第3章でi.i.d.の場合に行ったように, 典型集合を同様の方法で定義でき, 以下が示される.
+\begin{itemize}
+	\item 典型集合の確率は1に近い
+	\item 長さ$n$の典型系列は訳$2^{nH(\mathcal{X})}$個である.
+	\item 各典型系列の確率は$2^{-nH(\mathcal{X})}$に近い.
+\end{itemize}
+したがって, 長さ$n$の典型系列はほぼ$nH(\mathcal{X})$ビットで表現できる. これはエントロピーレートが定常エルゴード過程における平均記述長であることを示している.\\
+
+
+エントロピーレートはすべての定常過程に対して明確に定義されており, 特に, マルコフ連鎖においてはエントロピーレートの計算が非常に容易である.\\
+
+\textgt{解説 2.17} マルコフ連鎖のエントロピーレート\\
+
+定常マルコフ連鎖におけるエントロピーレートは
+\begin{align}
+	H(\mathcal{X}) & = H^\prime(\mathcal{X}) = \lim_{n \rightarrow \infty} H(X_n | X_{n-1}, \ldots, X_1) = H(X_n | X_{n-1}) \\
+	               & = H(X_2 | X_1)
+\end{align}
+で与えられる. ここで, 条件付きエントリーは与えられた定常分布によって計算され, 定常分布$\mu$は
+\begin{align}
+	\mu_j = \sum_{i} \mu_{ij}P_{ij} \:\: \text{（全ての状態jに対して）}
+\end{align}
+の解として与えられる.\\
+
+\begin{itembox}[l]{\textgt{定理 2.18}}
+	$\{X_i\}$を定常分布が$\mu$で確率遷移行列が$P$であるような定常マルコフ連鎖を考える. もし$X_1 \sim \mu$であるなら, エントロピーレートは
+	\begin{align}
+		H(\mathcal{X}) = - \sum_{i, j} \mu_i P_{ij} \log P_{ij}
+	\end{align}
+	で表せる
+\end{itembox}\\
+
+\textgt{証明 2.19}
+\begin{align}
+	H(\mathcal{X}) & = H(X_2|X_1)                                                                           \\
+	               & = \sum_{i} \mathbb{P}[X_1 = i] \cdot H(X_2 | X_1 = i)                                  \\
+	               & =       \sum_{i} \mathbb{P}[X_1 = i] \cdot \left( \sum_{j} -P_{ij} \log P_{ij} \right)
+	\\
+	               & = \sum_{i} \mu_{i} \left( \sum_{j} -P_{ij} \log P_{ij} \right) \qed
+\end{align}\\
+
+\textgt{証明 2.20} 2状態のマルコフ連鎖\\
+
+図\ref{example-1.8}のエントロピーレートは
+\begin{align}
+	H(\mathcal{X}) = H(X_2|X_1) = \frac{\beta}{\alpha + \beta}H(\alpha) + \frac{\alpha}{\alpha + \beta}H(\beta)
+\end{align}
+である.\\
+
+\paragraph{備考}
+
+もし, マルコフ連鎖が既約かつ非周期的であるなら,
+\begin{enumerate}
+	\item 状態上の定常分布は一意である.
+	\item 任意の初期分布は$n \rightarrow \infty$で定常分布に収束する.
+\end{enumerate}
+初期分布が定常分布でなくても, 長期的な挙動に基づくエントロピーレートは式（35）および式（38）に定義されるよう, $H(\mathcal{X})$である.
+
+
 
 
 %%参考文献%%
