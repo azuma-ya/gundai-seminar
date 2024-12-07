@@ -14,6 +14,16 @@
 %%%% ↑algotithmic の \REQUIRE と \ENSURE の表記を変更する
 \def \QED{\hfill $\Box$}%証明終了の記号
 
+% 新しいカウンターを定義
+\newcounter{sectioncounter}[section] % セクションごとにリセット
+\renewcommand{\thesectioncounter}{\thesection.\arabic{sectioncounter}} % 形式を1.1, 1.2に設定
+
+% コマンドの定義
+\newcommand{\itextgt}[1]{%
+    \refstepcounter{sectioncounter}% カウンターを進める
+    \textgt{\thesectioncounter}~#1% 定義番号付きで出力
+}
+
 \begin{document}
 
 \end{document}
